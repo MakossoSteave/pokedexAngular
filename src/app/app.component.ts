@@ -7,13 +7,14 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { BorderCardDirective } from './border-card.directive';
 import { TitleDirective } from './title.directive';
 import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
+import { PokemonDayPipe } from './pokemon-day.pipe';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, CommonModule,
-    BorderCardDirective
+    BorderCardDirective,PokemonDayPipe
     , TitleDirective, PokemonTypeColorPipe],
   templateUrl: 'app.component.html',
   styles: [],
