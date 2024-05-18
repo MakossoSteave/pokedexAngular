@@ -8,9 +8,9 @@ export class BorderCardDirective {
 
   private initColor: string = '#808080';
   private borderColors:string = 'solid 4px ';
-  private defaultSize: number = 220 ;
+  private defaultSize: number = 185 ;
   private defaultColor : string = '#808080';
-  private defaultWidth : number = 265;
+  private defaultWidth : number = 260;
   private Width : number = 250
 
   constructor(private el :ElementRef) { 

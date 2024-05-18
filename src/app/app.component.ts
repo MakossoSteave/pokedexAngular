@@ -8,46 +8,28 @@ import { BorderCardDirective } from './border-card.directive';
 import { TitleDirective } from './title.directive';
 import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
 import { PokemonDayPipe } from './pokemon-day.pipe';
+import { ListPokemonComponent } from './list-pokemon/list-pokemon.component';
+import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule,
-    BorderCardDirective,PokemonDayPipe
-    , TitleDirective, PokemonTypeColorPipe],
+  imports: [RouterOutlet ,
+    ListPokemonComponent ,DetailPokemonComponent],
   templateUrl: 'app.component.html',
   styles: [],
 })
 
 
-export class AppComponent implements OnInit {
+export class AppComponent {
   pokemonLists: Pokemon[] = POKEMONS;
   pokemonSelected: Pokemon | undefined
 
 
 
-  constructor(private sanitizer: DomSanitizer) { }
-  transform(url: any) {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
-  }
-
-
-  ngOnInit(): void {
-  }
-
-  selectPokemon(pokemonId: String) {
-    const index: number = + pokemonId;
-    const pokemon: Pokemon | undefined = this.pokemonLists.find(pokemon => pokemon.id == +pokemonId)
-    if (pokemon) {
-      console.log(`vous avez clické sur ${pokemon?.name}`)
-      this.pokemonSelected = pokemon;
-    } else {
-      console.log(`vous avez demandé un pokemon qui n'existe pas `)
-      this.pokemonSelected = pokemon;
-    }
+ 
 
 
 
-  }
 }
