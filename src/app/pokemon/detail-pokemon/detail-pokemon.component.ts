@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import  { POKEMONS } from '../mock-pockemon-list';
-import { Pokemon } from '../pokemon';
+import { Pokemon } from '../../pokemon';
 import { PokemonTypeColorPipe } from '../pokemon-type-color.pipe';
 import { CommonModule } from '@angular/common';
+import { POKEMONS } from '../mock-pockemon-list';
 
 
 @Component({
   selector: 'app-detail-pokemon',
-  standalone: true,
-  imports: [PokemonTypeColorPipe,CommonModule],
+  standalone: false,
   templateUrl: './detail-pokemon.component.html',
 })
 

@@ -1,15 +1,15 @@
 import { Component, Directive, OnInit, Pipe } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { POKEMONS } from './mock-pockemon-list';
+import { POKEMONS } from './pokemon/mock-pockemon-list';
 import { Pokemon } from './pokemon';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
-import { BorderCardDirective } from './border-card.directive';
+import { BorderCardDirective } from './pokemon/border-card.directive';
 import { TitleDirective } from './title.directive';
-import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
+import { PokemonTypeColorPipe } from './pokemon/pokemon-type-color.pipe';
 import { PokemonDayPipe } from './pokemon-day.pipe';
-import { ListPokemonComponent } from './list-pokemon/list-pokemon.component';
-import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
+import { ListPokemonComponent } from './pokemon/list-pokemon/list-pokemon.component';
+import { DetailPokemonComponent } from './pokemon/detail-pokemon/detail-pokemon.component';
 
 
 @Component({
