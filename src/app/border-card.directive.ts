@@ -48,6 +48,7 @@ export class BorderCardDirective {
   private defaultColorBorder(border:string ,data:string){
   
     this.el.nativeElement.style.border = border+data;
+    this.el.nativeElement.style.marginTop = '15%'
   }
 
   private setBorder(color : string){
