@@ -35,9 +35,10 @@
           </table>
         </div>
         <div class="card-action">
-          <a >Retour</a>
+          <a (click)="Goback()">Retour</a>
         </div>
       </div>
     </div>
     </div>
     </div>
+    <h4 *ngIf="!pokemon"> le pokemon demandé n'existe pas </h4>

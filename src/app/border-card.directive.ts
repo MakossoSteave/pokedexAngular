@@ -9,7 +9,7 @@ export class BorderCardDirective {
   private initColor: string = '#808080';
   private borderColors:string = 'solid 4px ';
   private defaultSize: number = 185 ;
-  private defaultColor : string = '#808080';
+  private defaultColor : string = 'red';
   private defaultWidth : number = 260;
   private Width : number = 250
 
@@ -23,17 +23,13 @@ export class BorderCardDirective {
   
   @HostListener('mouseenter') onMouseEnter(){
     this.setBorder(this.defaultColor);
-    this.setHeight(250)
-    this.setWidth();
 
 
   }
   @HostListener('mouseleave') onMouseLeave(){
-    this.defaultHeight()
     this.initialColor()
     this.initWidth()
-    this.setHeight(220)
-    this.defaultWidthSize();
+
   }
 
   private initialColor(){
@@ -45,9 +41,6 @@ export class BorderCardDirective {
     this.el.nativeElement.style.width = this.Width
   }
 
-  private setHeight(height : number){
-    this.el.nativeElement.style.height = height+'px';
-  }
 
   private defaultHeight (){
     this.el.nativeElement.style.height = this.defaultSize+'px'
@@ -56,13 +49,7 @@ export class BorderCardDirective {
   
     this.el.nativeElement.style.border = border+data;
   }
-  private setWidth(){
-    this.el.nativeElement.style.width =  this.defaultWidth + 'px';
-  }
-  private defaultWidthSize(){
-    this.el.nativeElement.style.width =  this.Width + 'px';
 
-  }
   private setBorder(color : string){
     let border = 'solid 4px ' + color
     this.el.nativeElement.style.border = border;
