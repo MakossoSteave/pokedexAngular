@@ -2,21 +2,16 @@ import { Component, Directive, OnInit, Pipe } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { POKEMONS } from './pokemon/mock-pockemon-list';
 import { Pokemon } from './pokemon';
+import { PokemonModule } from './pokemon/pokemon.module';
+import { AppRoutingModule } from './app.routes';
+import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { DomSanitizer } from '@angular/platform-browser';
-import { BorderCardDirective } from './pokemon/border-card.directive';
-import { TitleDirective } from './title.directive';
-import { PokemonTypeColorPipe } from './pokemon/pokemon-type-color.pipe';
-import { PokemonDayPipe } from './pokemon-day.pipe';
-import { ListPokemonComponent } from './pokemon/list-pokemon/list-pokemon.component';
-import { DetailPokemonComponent } from './pokemon/detail-pokemon/detail-pokemon.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet ,
-    ListPokemonComponent ,DetailPokemonComponent],
+  imports: [ RouterOutlet,CommonModule,PokemonModule ],
   templateUrl: 'app.component.html',
   styles: [],
 })

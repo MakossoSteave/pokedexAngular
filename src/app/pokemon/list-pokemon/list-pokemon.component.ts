@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BorderCardDirective } from '../border-card.directive';
 import { TitleDirective } from '../../title.directive';
 import { PokemonDayPipe } from '../../pokemon-day.pipe';
@@ -7,6 +7,7 @@ import { Pokemon } from '../../pokemon';
 import { POKEMONS } from '../mock-pockemon-list';
 import { CommonModule } from '@angular/common';
 import { Route, Router } from '@angular/router';
+import { PokemonService } from '../pokemon.service';
 
 @Component({
   selector: 'app-list-pokemon',
@@ -15,16 +16,22 @@ import { Route, Router } from '@angular/router';
   styles: ``
 })
 
-export class ListPokemonComponent {
+export class ListPokemonComponent implements OnInit {
 
 
-  pokemonLists: Pokemon[] = POKEMONS;
-  pokemonSelected: Pokemon | undefined
+  pokemonList: Pokemon[];
 
-  constructor(private route:Router){}
+  constructor(
+    private router :Router,
+    private pokemonService :PokemonService
+
+  ){}
+  ngOnInit(){
+    this.pokemonList = this.pokemonService.getPokemonList() ;
+  }
   
   goDetail(id:number) {
-    this.route.navigate(["pokemon/"+id])
+    this.router.navigate(["pokemons/pokemon/"+id])
     }
 
 }

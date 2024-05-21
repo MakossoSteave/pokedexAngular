@@ -3,8 +3,7 @@ import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-page-not-found',
-  standalone: true,
-  imports: [],
+  standalone: false,
   templateUrl: './page-not-found.component.html',
   styles: ``
 })
@@ -13,6 +12,7 @@ export class PageNotFoundComponent {
   constructor(private router : Router){}
 
   notFound(){
-    this.router.navigate(['/pokemon'])
+    console .log("he")
+    this.router.navigate(['/pokemons/pokemon'])
   }
 }
