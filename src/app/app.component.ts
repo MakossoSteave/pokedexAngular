@@ -6,12 +6,13 @@ import { PokemonModule } from './pokemon/pokemon.module';
 import { AppRoutingModule } from './app.routes';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ RouterOutlet,CommonModule,PokemonModule ],
+  imports: [ RouterOutlet,FormsModule,CommonModule,PokemonModule ],
   templateUrl: 'app.component.html',
   styles: [],
 })

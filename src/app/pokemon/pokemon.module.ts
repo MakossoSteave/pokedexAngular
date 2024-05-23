@@ -9,6 +9,7 @@ import { AppRoutingModule } from '../app.routes';
 import { PokemonRoutingModule } from './pokemon-route';
 import { PokemonService } from './pokemon.service';
 import { FormsModule } from '@angular/forms';
+import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
 
 
 
@@ -16,12 +17,13 @@ import { FormsModule } from '@angular/forms';
   imports: [
     RouterOutlet,
     CommonModule,
-    PokemonRoutingModule,FormsModule
+    PokemonRoutingModule,FormsModule,PokemonFormComponent,
+    PokemonTypeColorPipe
+
  ],
   declarations: [
     ListPokemonComponent,
-    DetailPokemonComponent,BorderCardDirective,
-    PokemonTypeColorPipe
+    DetailPokemonComponent,BorderCardDirective
   ],
   providers:[PokemonService]
 
